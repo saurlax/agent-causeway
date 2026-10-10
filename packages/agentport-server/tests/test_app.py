@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from agent_port_server.app import create_app
+from agentport_server.app import create_app
 from fastapi.testclient import TestClient
 
 
@@ -16,12 +16,12 @@ def test_headless_service_exposes_health_status_and_openapi(tmp_path: Path) -> N
 
 
 def test_console_does_not_swallow_unknown_api_routes(tmp_path: Path) -> None:
-    (tmp_path / "index.html").write_text("<html>Agent Port</html>")
+    (tmp_path / "index.html").write_text("<html>AgentPort</html>")
     assets = tmp_path / "assets"
     assets.mkdir()
-    (assets / "app.js").write_text("console.log('Agent Port');")
+    (assets / "app.js").write_text("console.log('AgentPort');")
     with TestClient(create_app(static_dir=tmp_path)) as client:
-        assert client.get("/").text == "<html>Agent Port</html>"
+        assert client.get("/").text == "<html>AgentPort</html>"
         assert client.get("/assets/app.js").status_code == 200
         missing = client.get("/api/v1/missing")
         assert missing.status_code == 404

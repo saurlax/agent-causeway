@@ -40,13 +40,13 @@ export function App() {
   return (
     <div className="shell">
       <header>
-        <a className="brand" href="/" aria-label="Agent Port home">
+        <a className="brand" href="/" aria-label="AgentPort home">
           <span className="brand-mark" aria-hidden="true">
             ↔
           </span>
-          Agent Port
+          AgentPort
         </a>
-        <a className="repository" href="https://github.com/saurlax/agent-port">
+        <a className="repository" href="https://github.com/saurlax/agentport">
           GitHub ↗
         </a>
       </header>

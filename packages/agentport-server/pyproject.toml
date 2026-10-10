@@ -1,35 +1,35 @@
 [project]
-name = "agent-port-server"
+name = "agentport-server"
 version = "0.0.0"
-description = "Agent Port service and bundled management console"
+description = "AgentPort service and bundled management console"
 readme = "README.md"
 license = "Apache-2.0"
 license-files = ["LICENSE"]
 authors = [{ name = "Saurlax", email = "saurlax@qq.com" }]
 requires-python = ">=3.13"
 dependencies = [
-    "agent-port-core",
+    "agentport-core",
     "click>=8.2,<9",
     "fastapi>=0.116,<1",
     "uvicorn>=0.35,<1",
 ]
 
 [project.urls]
-Homepage = "https://github.com/saurlax/agent-port"
-Issues = "https://github.com/saurlax/agent-port/issues"
+Homepage = "https://github.com/saurlax/agentport"
+Issues = "https://github.com/saurlax/agentport/issues"
 
 [project.scripts]
-agent-port = "agent_port_server.cli:main"
+agentport = "agentport_server.cli:main"
 
 [tool.uv.sources]
-agent-port-core = { workspace = true }
+agentport-core = { workspace = true }
 
 [build-system]
 requires = ["hatchling>=1.27,<2"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build]
-artifacts = ["agent_port_server/static/**"]
+artifacts = ["agentport_server/static/**"]
 
 [tool.hatch.build.targets.wheel]
-packages = ["agent_port_server"]
+packages = ["agentport_server"]

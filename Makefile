@@ -15,13 +15,13 @@ install:
 	pnpm --dir frontend install --frozen-lockfile
 
 dev-api:
-	uv run --locked agent-port serve --reload
+	uv run --locked agentport serve --reload
 
 dev-web:
-	pnpm --dir frontend --filter @agent-port/console dev
+	pnpm --dir frontend --filter @agentport/console dev
 
 serve: build-web
-	uv run --locked agent-port serve
+	uv run --locked agentport serve
 
 check: check-python check-web
 

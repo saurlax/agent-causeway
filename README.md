@@ -1,12 +1,12 @@
-# Agent Port
+# AgentPort
 
-[![CI](https://github.com/saurlax/agent-port/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/saurlax/agent-port/actions/workflows/ci.yml)
+[![CI](https://github.com/saurlax/agentport/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/saurlax/agentport/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/python-3.13%2B-blue)](https://www.python.org/)
 [![License](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE)
 
 **The communication gateway for AI agents.**
 
-Agent Port is an open-source project for connecting AI agents to the places people
+AgentPort is an open-source project for connecting AI agents to the places people
 communicate. Incoming events can be routed to an Agent Host, while agents use MCP
 tools to read conversations and act across channels. The goal is a reusable
 communication layer: any channel, any agent.
@@ -15,7 +15,7 @@ Channel ingestion and Agent Host delivery have separate adapters. This allows a
 conversation to reach an agent in a13n or another Host, while the agent can consult
 other authorized channels before deciding where and how to respond.
 
-> **Project status:** Agent Port is in its foundation stage. This repository
+> **Project status:** AgentPort is in its foundation stage. This repository
 > contains a runnable HTTP service, a minimal management console, initial message
 > models, and development tooling. Channel adapters, a13n delivery, persistence,
 > and MCP tools are planned and are **not implemented yet**.
@@ -27,10 +27,10 @@ routing in the diagram are not available in the initial scaffold.
 
 ```mermaid
 flowchart LR
-    Channels[IM and future voice channels] -->|Incoming events| Gateway[Agent Port]
+    Channels[IM and future voice channels] -->|Incoming events| Gateway[AgentPort]
     Gateway -->|Host adapter submits input| Hosts[a13n and other Agent Hosts]
     Hosts --> Agents[Agent runs]
-    Agents -->|Read conversations and send messages| MCP[Agent Port MCP tools]
+    Agents -->|Read conversations and send messages| MCP[AgentPort MCP tools]
     MCP --> Gateway
     Gateway -->|Channel adapter sends a reply| Channels
 ```
@@ -46,7 +46,7 @@ flowchart LR
 - **Embed or run separately.** Keep reusable Python behavior independent of the
   HTTP server and optional console so it can later be embedded in a Host.
 
-Agent Port is independent of [Agent Foundation (a13n)](https://github.com/converge-ai-labs/agent-foundation)
+AgentPort is independent of [Agent Foundation (a13n)](https://github.com/converge-ai-labs/agent-foundation)
 and [OneBots](https://github.com/lc-cn/onebots). The initial development layout
 follows a13n's Python/uv and React/TypeScript/Vite approach.
 
@@ -57,8 +57,8 @@ or later**, and **pnpm 10.34.5** for the console. There are no published package
 container images yet.
 
 ```bash
-git clone https://github.com/saurlax/agent-port.git
-cd agent-port
+git clone https://github.com/saurlax/agentport.git
+cd agentport
 make install
 make serve
 ```
@@ -72,12 +72,12 @@ To run only the backend, without Node.js or pnpm:
 
 ```bash
 uv sync --locked
-uv run --locked agent-port serve
+uv run --locked agentport serve
 ```
 
 The backend exposes `GET /healthz`, `GET /api/v1/status`, and
 `GET /api/openapi.json`. It serves the console only when frontend assets are
-present. Run `uv run agent-port serve --help` for listen options.
+present. Run `uv run agentport serve --help` for listen options.
 
 The initial service binds to loopback and has no authentication; use it for local
 development.
@@ -104,8 +104,8 @@ Run `make dev-api` and `make dev-web` in separate terminals. The frontend at
 
 ```text
 packages/
-  agent-port-core/     Reusable channel addresses and text message models
-  agent-port-server/   FastAPI application, CLI, and optional console assets
+  agentport-core/      Reusable channel addresses and text message models
+  agentport-server/    FastAPI application, CLI, and optional console assets
 frontend/
   apps/console/       React + TypeScript + Vite management console
 ```
@@ -116,7 +116,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for setup and validation and
 ## Contribute
 
 Bug reports, documentation improvements, and focused integrations are welcome.
-Search [GitHub Issues](https://github.com/saurlax/agent-port/issues) before opening a
+Search [GitHub Issues](https://github.com/saurlax/agentport/issues) before opening a
 proposal. Discuss routing semantics, delivery guarantees, and new adapter
 contracts before implementing them. Keep implementation claims aligned with the
 code that users can run.
@@ -125,6 +125,6 @@ For private vulnerability reports, follow [SECURITY.md](SECURITY.md).
 
 ## License
 
-Agent Port is licensed under the [Apache License 2.0](LICENSE).
+AgentPort is licensed under the [Apache License 2.0](LICENSE).
 
 Copyright 2026 Saurlax.

@@ -4,15 +4,15 @@ requires-python = ">=3.13"
 
 [manifest]
 members = [
-    "agent-port-core",
-    "agent-port-server",
-    "agent-port-workspace",
+    "agentport-core",
+    "agentport-server",
+    "agentport-workspace",
 ]
 
 [[package]]
-name = "agent-port-core"
+name = "agentport-core"
 version = "0.0.0"
-source = { editable = "packages/agent-port-core" }
+source = { editable = "packages/agentport-core" }
 dependencies = [
     { name = "pydantic" },
 ]
@@ -21,11 +21,11 @@ dependencies = [
 requires-dist = [{ name = "pydantic", specifier = ">=2.12,<3" }]
 
 [[package]]
-name = "agent-port-server"
+name = "agentport-server"
 version = "0.0.0"
-source = { editable = "packages/agent-port-server" }
+source = { editable = "packages/agentport-server" }
 dependencies = [
-    { name = "agent-port-core" },
+    { name = "agentport-core" },
     { name = "click" },
     { name = "fastapi" },
     { name = "uvicorn" },
@@ -33,21 +33,21 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "agent-port-core", editable = "packages/agent-port-core" },
+    { name = "agentport-core", editable = "packages/agentport-core" },
     { name = "click", specifier = ">=8.2,<9" },
     { name = "fastapi", specifier = ">=0.116,<1" },
     { name = "uvicorn", specifier = ">=0.35,<1" },
 ]
 
 [[package]]
-name = "agent-port-workspace"
+name = "agentport-workspace"
 version = "0.0.0"
 source = { virtual = "." }
 
 [package.dev-dependencies]
 dev = [
-    { name = "agent-port-core" },
-    { name = "agent-port-server" },
+    { name = "agentport-core" },
+    { name = "agentport-server" },
     { name = "httpx2" },
     { name = "pyright" },
     { name = "pytest" },
@@ -58,8 +58,8 @@ dev = [
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "agent-port-core", editable = "packages/agent-port-core" },
-    { name = "agent-port-server", editable = "packages/agent-port-server" },
+    { name = "agentport-core", editable = "packages/agentport-core" },
+    { name = "agentport-server", editable = "packages/agentport-server" },
     { name = "httpx2", specifier = ">=2.5,<3" },
     { name = "pyright", specifier = ">=1.1,<2" },
     { name = "pytest", specifier = ">=9,<10" },

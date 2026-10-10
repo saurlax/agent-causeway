@@ -1,6 +1,6 @@
 # Repository Guide
 
-Agent Port connects communication channels to Agent Hosts. Keep channel ingestion,
+AgentPort connects communication channels to Agent Hosts. Keep channel ingestion,
 Host delivery, agent-facing tools, and process lifecycle separate.
 
 ## Sources and workflow

@@ -1,6 +1,6 @@
 # Security Policy
 
-Agent Port is pre-release software. There are no maintained release lines yet.
+AgentPort is pre-release software. There are no maintained release lines yet.
 
 Report suspected vulnerabilities privately to [saurlax@qq.com](mailto:saurlax@qq.com).
 Include the affected commit, reproduction steps, expected impact, and a minimal

@@ -13,13 +13,13 @@ build/
 # Frontend
 node_modules/
 *.tsbuildinfo
-packages/agent-port-server/agent_port_server/static/
+packages/agentport-server/agentport_server/static/
 
 # Local configuration and state
 .env
 .env.*
 !.env.example
-.agent-port/
+.agentport/
 *.db
 *.db-shm
 *.db-wal

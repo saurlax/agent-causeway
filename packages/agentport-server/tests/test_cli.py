@@ -1,4 +1,4 @@
-from agent_port_server.cli import main
+from agentport_server.cli import main
 from click.testing import CliRunner
 
 

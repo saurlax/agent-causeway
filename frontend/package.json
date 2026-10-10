@@ -1,5 +1,5 @@
 {
-  "name": "agent-port-frontend",
+  "name": "agentport-frontend",
   "private": true,
   "packageManager": "pnpm@10.34.5",
   "engines": {

@@ -4,7 +4,7 @@ import { defineConfig } from "vite";
 export default defineConfig({
   plugins: [react()],
   build: {
-    outDir: "../../../packages/agent-port-server/agent_port_server/static",
+    outDir: "../../../packages/agentport-server/agentport_server/static",
     emptyOutDir: true,
   },
   server: {

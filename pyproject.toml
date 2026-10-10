@@ -1,7 +1,7 @@
 [project]
-name = "agent-port-workspace"
+name = "agentport-workspace"
 version = "0.0.0"
-description = "Development workspace for Agent Port"
+description = "Development workspace for AgentPort"
 readme = "README.md"
 license = "Apache-2.0"
 requires-python = ">=3.13"
@@ -14,13 +14,13 @@ package = false
 members = ["packages/*"]
 
 [tool.uv.sources]
-agent-port-core = { workspace = true }
-agent-port-server = { workspace = true }
+agentport-core = { workspace = true }
+agentport-server = { workspace = true }
 
 [dependency-groups]
 dev = [
-    "agent-port-core",
-    "agent-port-server",
+    "agentport-core",
+    "agentport-server",
     "httpx2>=2.5,<3",
     "pyright>=1.1,<2",
     "pytest>=9,<10",
@@ -37,12 +37,12 @@ ignore = ["E501"]
 
 [tool.pyright]
 include = [
-    "packages/agent-port-core/agent_port_core",
-    "packages/agent-port-server/agent_port_server",
+    "packages/agentport-core/agentport_core",
+    "packages/agentport-server/agentport_server",
 ]
 pythonVersion = "3.13"
 typeCheckingMode = "standard"
 
 [tool.pytest.ini_options]
 addopts = ["--import-mode=importlib"]
-testpaths = ["packages/agent-port-core/tests", "packages/agent-port-server/tests"]
+testpaths = ["packages/agentport-core/tests", "packages/agentport-server/tests"]
