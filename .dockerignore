@@ -1,0 +1,15 @@
+.git
+.venv
+.env
+.env.*
+.agentcauseway
+**/node_modules
+**/__pycache__
+**/.pytest_cache
+**/.ruff_cache
+**/*.tsbuildinfo
+dist
+build
+**/*.sqlite3*
+**/*.db*
+packages/agentcauseway-server/agentcauseway_server/static
