@@ -18,7 +18,7 @@ class IntegrationStatus(BaseModel):
 
 
 class Status(BaseModel):
-    name: str = "Agent Port"
+    name: str = "AgentCauseway"
     version: str
     stage: Literal["foundation"] = "foundation"
     integrations: list[IntegrationStatus]
@@ -27,8 +27,8 @@ class Status(BaseModel):
 def create_app(*, static_dir: Path | None = None) -> FastAPI:
     """Create a headless service or serve an already-built console."""
     app = FastAPI(
-        title="Agent Port",
-        version=version("agent-port-server"),
+        title="AgentCauseway",
+        version=version("agentcauseway-server"),
         docs_url="/api/docs",
         redoc_url=None,
         openapi_url="/api/openapi.json",

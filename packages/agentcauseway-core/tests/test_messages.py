@@ -1,7 +1,7 @@
 from datetime import UTC, datetime
 
 import pytest
-from agent_port_core import ChannelAddress, Message
+from agentcauseway_core import ChannelAddress, Message
 from pydantic import ValidationError
 
 

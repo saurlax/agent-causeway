@@ -1,4 +1,4 @@
-# Agent Port Server
+# AgentCauseway Server
 
 FastAPI service, command-line entry point, and optional bundled React console.
 The current foundation exposes process health, implementation status, and API
@@ -7,7 +7,7 @@ are not implemented yet.
 
 From the repository root, `make serve` builds the console and starts the service.
 `make dev-api` starts the backend without requiring a frontend build. Run
-`agent-port serve --help` for listen options.
+`agentcauseway serve --help` for listen options.
 
 Build the frontend before packaging to include it in the wheel and source
 archive. Headless packages remain usable without frontend assets or Node.js.

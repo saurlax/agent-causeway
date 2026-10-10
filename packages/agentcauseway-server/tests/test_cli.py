@@ -1,4 +1,4 @@
-from agent_port_server.cli import main
+from agentcauseway_server.cli import main
 from click.testing import CliRunner
 
 

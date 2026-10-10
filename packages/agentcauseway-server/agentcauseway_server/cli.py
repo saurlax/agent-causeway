@@ -5,7 +5,7 @@ import uvicorn
 
 
 @click.group()
-@click.version_option(package_name="agent-port-server")
+@click.version_option(package_name="agentcauseway-server")
 def main() -> None:
     """Connect agents to communication channels."""
 
@@ -16,4 +16,4 @@ def main() -> None:
 @click.option("--reload", is_flag=True, help="Reload Python code during development.")
 def serve(host: str, port: int, reload: bool) -> None:
     """Run the HTTP service and serve the console if its assets are present."""
-    uvicorn.run("agent_port_server.app:create_app", factory=True, host=host, port=port, reload=reload)
+    uvicorn.run("agentcauseway_server.app:create_app", factory=True, host=host, port=port, reload=reload)
