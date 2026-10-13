@@ -21,8 +21,8 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/saurlax/agentcauseway"
-Issues = "https://github.com/saurlax/agentcauseway/issues"
+Homepage = "https://github.com/saurlax/agent-causeway"
+Issues = "https://github.com/saurlax/agent-causeway/issues"
 
 [project.scripts]
 agentcauseway = "agentcauseway_server.cli:main"

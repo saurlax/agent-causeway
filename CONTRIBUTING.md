@@ -2,7 +2,7 @@
 
 AgentCauseway is in its prototype stage. Bug reports, focused improvements, and
 channel or Agent Host integrations are welcome. Search existing
-[issues](https://github.com/saurlax/agentcauseway/issues) before opening a proposal.
+[issues](https://github.com/saurlax/agent-causeway/issues) before opening a proposal.
 Discuss material changes to routing, identity, delivery guarantees, or adapter
 contracts in an issue before implementation. Small corrections can go directly
 to a pull request.

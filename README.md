@@ -1,6 +1,6 @@
 # AgentCauseway
 
-[![CI](https://github.com/saurlax/agentcauseway/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/saurlax/agentcauseway/actions/workflows/ci.yml)
+[![CI](https://github.com/saurlax/agent-causeway/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/saurlax/agent-causeway/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/python-3.13%2B-blue)](https://www.python.org/)
 [![License](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE)
 
@@ -24,7 +24,7 @@ other authorized channels before deciding where and how to respond.
 ## How it fits together
 
 The implemented bridge separates channel ingestion, host execution, and
-agent-facing communication tools. Restricted group replies pass through administrator approval; explicit full-access routes can reply automatically.
+agent-facing communication tools. Authorized private and group replies are sent automatically.
 
 ```mermaid
 flowchart LR
@@ -52,6 +52,12 @@ AgentCauseway is independent of [Agent Foundation (a13n)](https://github.com/con
 and [OneBots](https://github.com/lc-cn/onebots). The initial development layout
 follows a13n's Python/uv and React/TypeScript/Vite approach.
 
+Channel collection is independent of routing. Bounded authenticated incoming
+packets are retained in a private SQLite journal, including unsupported events
+and non-text message payloads. Routes govern Agent activation and MCP access;
+authorized MCP reads also include text collected before route creation or while
+delivery was disabled. Platform permissions still determine which messages reach AC.
+
 ## Run from source
 
 You need **Python 3.13**, [**uv**](https://docs.astral.sh/uv/), **Make**, **Node.js 24
@@ -59,7 +65,7 @@ or later**, and **pnpm 10.34.5** for the console. There are no published package
 container images yet.
 
 ```bash
-git clone https://github.com/saurlax/agentcauseway.git
+git clone https://github.com/saurlax/agent-causeway.git
 cd agentcauseway
 make install
 export AC_ADMIN_USERNAME=admin
@@ -69,8 +75,8 @@ make serve
 
 Open **<http://127.0.0.1:8310>** for the console and
 **<http://127.0.0.1:8310/api/docs>** for the API documentation. The console displays
-separate channel and Agent Host panels, conversation routes, received messages,
-and reply approvals. Management pages use a search toolbar and table; Add and
+separate channel and Agent Host panels, conversation routes, and conversation histories with received messages and
+Agent replies. Management pages use a search toolbar and table; Add and
 row actions open dialogs. Sign in
 with the account and password you configured. Follow the
 [OneBots and a13n setup guide](docs/onebots-a13n.md) or the
@@ -169,7 +175,7 @@ in `docs/`; unresolved designs and plans belong in GitHub Issues.
 ## Contribute
 
 Bug reports, documentation improvements, and focused integrations are welcome.
-Search [GitHub Issues](https://github.com/saurlax/agentcauseway/issues) before opening a
+Search [GitHub Issues](https://github.com/saurlax/agent-causeway/issues) before opening a
 proposal. Discuss routing semantics, delivery guarantees, and new adapter
 contracts before implementing them. Keep implementation claims aligned with the
 code that users can run.

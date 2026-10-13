@@ -6,5 +6,5 @@ The initial package defines a channel address and an incoming text message. It h
 no web framework, process startup, storage, or Agent Host dependencies. These
 models are an initial foundation, not a stable external protocol.
 
-See the [project repository](https://github.com/saurlax/agentcauseway) for development
+See the [project repository](https://github.com/saurlax/agent-causeway) for development
 commands and implementation status.
