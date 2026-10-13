@@ -9,9 +9,10 @@ includes the console and is checked for startup, health, console delivery, and
 administrator login before publication. No registry token needs to be added to
 repository secrets; publishing uses the workflow's scoped `GITHUB_TOKEN`.
 
-Tags are `latest`, `main`, and `sha-<full commit SHA>`. Prefer the commit tag for
-an explicit deployment and use the published digest when an immutable reference
-is needed. Image metadata links the package to this repository and source commit.
+Tags are `dev`, `latest`, `main`, and `sha-<full commit SHA>`. The first three
+point to the same latest successful `main` publication. The existing Zeabur
+service uses `dev`. Use the commit tag or published digest when an immutable
+reference is needed. Image metadata links the package to its source commit.
 Make the GHCR package public for anonymous platform pulls; private packages need
 a read-only registry credential configured in the hosting platform.
 
@@ -51,13 +52,14 @@ The existing service and volume are recorded in [CLAUDE.md](../CLAUDE.md).
 Use its GHCR image configuration rather than uploading the source to Zeabur.
 Publishing an image and rolling out the service are separate operations.
 
-For a subsequent version, update the image tag on that same service:
+After a successful publication, apply `dev` on the same service to pull its
+current image. Updating the registry tag alone does not restart Zeabur:
 
 ```bash
 npx zeabur@latest service update tag \
   --id 6aca42e54873e494859cef83 \
   --env-id 6abb56df4fc8a0a35a5dda61 \
-  --tag sha-FULL_COMMIT_SHA --yes --interactive=false
+  --tag dev --yes --interactive=false
 ```
 
 The update restarts the service while preserving the `/data` volume, variables,
