@@ -9,7 +9,7 @@ Follow [AGENTS.md](AGENTS.md) for repository guidance.
 - Service: channel-gateway
 - Service ID: `6aca42e54873e494859cef83`
 - Environment ID: `6abb56df4fc8a0a35a5dda61`
-- Public URL: `https://channel-gateway.zeabur.app`
+- Public URL: `https://cgw.saurlax.com`
 - Persistent volume: `ac-data` mounted at `/data`
 - Container image: `ghcr.io/saurlax/channel-gateway`
 - Deployment tag: `dev`, tracking the latest successful `main` CI publication

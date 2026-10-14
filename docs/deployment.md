@@ -26,9 +26,9 @@ Mount a persistent volume at `/data` and configure these variables:
 
 | Variable | Value |
 | --- | --- |
-| `CG_ADMIN_USERNAME` | Your management username |
-| `CG_ADMIN_PASSWORD` | A private password of at least eight characters |
-| `CG_DATA_DIR` | `/data/state` |
+| `CGW_ADMIN_USERNAME` | Your management username |
+| `CGW_ADMIN_PASSWORD` | A private password of at least eight characters |
+| `CGW_DATA_DIR` | `/data/state` |
 
 The container prepares the private state directory on the mounted volume, then
 starts the service as UID/GID 10001. Use a single replica: SQLite storage, channel
@@ -49,6 +49,8 @@ same bot before moving it to this deployment.
 ## Zeabur image updates
 
 The existing service and volume are recorded in [CLAUDE.md](../CLAUDE.md).
+Its public URL is `https://cgw.saurlax.com` and its MCP endpoint is
+`https://cgw.saurlax.com/mcp/`.
 Use its GHCR image configuration rather than uploading the source to Zeabur.
 Publishing an image and rolling out the service are separate operations.
 
